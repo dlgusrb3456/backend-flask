@@ -1,5 +1,5 @@
 FROM python:3.7
-COPY myflask /app/server/
+COPY __init__.py entities main.py /app/server/
 WORKDIR /app/server
 RUN pip install sqlalchemy psycopg2-binary flask marshmallow flask-cors
 EXPOSE 5000
