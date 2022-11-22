@@ -34,9 +34,8 @@ node {
                         git config --global user.email "dlgusrb3456@naver.com"
                         git config --global user.name "dlgusrb3456"
                         git checkout main
-                        #cd env/dev && kustomize edit set image arm7tdmi/node-hello-world:${env.BUILD_NUMBER}
-                        echo "test jenkins" >> test1.txt
-                        git commit -a -m "updated the image tag"
+                        cd env/dev && kustomize edit set image 685766701737.dkr.ecr.ap-northeast-1.amazonaws.com/test:${env.BUILD_NUMBER}
+                        git commit -a -m "updated the image tag ${env.BUILD_NUMBER}"
                         git push
                     """)
           }
