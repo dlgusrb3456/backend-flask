@@ -2,6 +2,13 @@ node {
      stage('Clone repository') {
          checkout scm
      }
+     
+     stage('make code directory'){
+          mkdir myflask
+          mv __init__.py myflask
+          mv entities myflask
+          mv main.py myflask
+     }
 
      stage('Build image') {
          app = docker.build("685766701737.dkr.ecr.ap-northeast-1.amazonaws.com/test")
