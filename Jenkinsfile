@@ -4,10 +4,12 @@ node {
      }
      
      stage('make code directory'){
-          mkdir myflask
-          mv __init__.py myflask
-          mv entities myflask
-          mv main.py myflask
+          sh("""
+               mkdir myflask
+               mv __init__.py myflask
+               mv entities myflask
+               mv main.py myflask
+               """)
      }
 
      stage('Build image') {
