@@ -36,7 +36,7 @@ node {
                         git checkout main
                         git pull origin main
                         cd overlay/dev && kustomize edit set image 685766701737.dkr.ecr.ap-northeast-1.amazonaws.com/test:be_${env.BUILD_NUMBER}
-                        git commit -a -m "updated the image tag ${env.BUILD_NUMBER}"
+                        git commit -a -m "updated the image tag be_${env.BUILD_NUMBER}"
                         git push
                     """)
           }
