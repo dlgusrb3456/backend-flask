@@ -8,9 +8,6 @@ node {
      }
 
      stage('Push image') {
-         sh 'rm  ~/.dockercfg || true'
-         sh 'rm ~/.docker/config.json || true'
-          
          docker.withRegistry('https://685766701737.dkr.ecr.ap-northeast-1.amazonaws.com', 'ecr:ap-northeast-1:ecr_credential') {
              app.push("be_${env.BUILD_NUMBER}")
              app.push("latest")
