@@ -1,5 +1,5 @@
 node {
-     stage('Clone repository') {
+     stage('checkout SCM') {
          checkout scm
      }
      
